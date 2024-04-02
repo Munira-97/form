@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    
+
+    <style>
+        body{
+            background-image: url('log.jpg');
+            background-size: cover;
+        }
+        .form-box{
+            display: flex;
+            height: 700px;
+        }
+        h2{
+            text-align: center;
+            font-family: "Brush Script MT", "Cursive";
+
+        }
+        .regi{
+            height: 420px;
+            width: 40%;
+            box-shadow: 15px 10px 15px 10px black;
+            background-image: url('bg.jpg');
+            background-size: cover;
+            color: white;
+            opacity: 0.7;
+           
+        }
+        .logi{
+            height: 300px;
+            width: 25%;
+            background-image: url("lgbg.jpg");
+            background-size: cover;
+            box-shadow: 5px 5px 25px 5px pink;
+            opacity: 0.9;
+            
+        }
+        .hdn{
+            display: none;
+        }
+        #btn{
+            padding: 20px;
+            background-color: transparent;
+            box-shadow: 5px 5px 15px 5px gray;
+            color: rgb(69, 59, 71);
+            border: none;
+            border-radius: 6%;
+
+        }
+        #btn:hover{
+            box-shadow: 5px 5px 15px 5px rgb(240, 124, 46);
+        }
+        #regibtn{
+            padding: 5px ;
+            background-color: brown;
+            color: aliceblue;
+            border: none;
+            border-radius: 10%;
+        }
+        #regibtn:hover{
+            background-color: aliceblue;
+            color: brown;
+           
+
+
+        }
+        @media screen and(max-width: 600px) {
+            body{
+                width: 100%;
+            }
+
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="form-box container">
+        <form class="regi my-auto" id="frma">
+            <h2>Regestration Form</h2>
+            <div class="form-group">
+                <ion-icon name="person-outline"></ion-icon>
+                <label for="">Enter Your Name</label>
+                <input type="text" class="form-control" name="nam" >
+            </div>
+
+            <div class="form-group">
+                <ion-icon name="person-outline"></ion-icon>
+                <label for="">Enter Your Location</label>
+                <input type="text" class="form-control" name="loc">
+
+            </div>
+
+            <div class="form">
+                <ion-icon name="mail-outline"></ion-icon>
+                <label for="">Enter Your Gmail</label>
+                <input type="email" class="form-control" name="gml" id="">
+
+            </div>
+
+            <div class="form-group">
+                <ion-icon name="call-outline"></ion-icon>
+                <label for="">Enter Your Phone Number</label>
+                <input type="number" class="form-control" name="num" id="">
+            </div>
+               
+            
+           <div class="btn my-auto">
+               <button id="regibtn" type="submit" >REGISTER</button>
+             </div>
+              
+        </form>
+
+
+        <form class="logi container hdn my-auto" id="frmb" name="logf">
+            <h2>Login Form</h2>
+             <div class="form-group">
+                 <ion-icon name="person-outline"></ion-icon>
+                 <label for="">Enter Your Name</label>
+                 <input type="text" class="form-control" name="nm" id="">
+ 
+             </div>
+ 
+             <div class="form-group">
+                 <ion-icon name="mail-outline"></ion-icon>
+                 <label for="">Enter Your Gmail</label>
+                 <input type="text" class="form-control" name="gm" id="">
+ 
+             </div>
+ 
+ 
+ 
+             
+        <div class="btn d-flex" style="justify-content: center; align-items: center;">
+         <button id="logbtn" type="submit">Login</button>
+       </div>
+        
+ 
+         </form>
+ 
+ 
+
+     <div class="bomclck my-auto mx-auto">
+        <button id="btn" type="button" onclick="frmcall()"><h3>Register/Login</h3></button>
+     </div>
+
+  
+    </div>
+
+
+      
+<script>
+    function frmcall(){
+        var a = document.getElementById('frma')
+        var b = document.getElementById('frmb')
+
+
+        a.classList.toggle('hdn');
+        b.classList.toggle('hdn');
+        //clss hdn a ja dibo ekhne seta tggl korte hbe//
+        
+    }
+
+    function callreg(){
+        var a = document.forms["regform"]["nam"].value;
+    
+        var b = document.forms["regform"]["loc"].value;
+        var c = document.forms["regform"]["gml"].value;
+        var d = document.forms["regform"]["num"].value;
+
+        var g = "";
+
+        if( a === g || b ===g || c ===g || d ===g )
+        {
+            alert("must filed");
+            document.getElementById('invl').innerHTML = "Invalid";
+            document.getElementById('invl').style.color = "red";
+        }
+        return;
+
+
+    }
+</script>
+    
+</body>
+</html>
